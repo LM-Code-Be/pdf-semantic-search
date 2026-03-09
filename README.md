@@ -2,7 +2,10 @@
 
 PDF Semantic Search est une application desktop local-first qui permet d'importer une bibliothèque de fichiers PDF, d'indexer leur contenu en arrière-plan et de retrouver rapidement les passages les plus utiles grâce à une recherche hybride. L'application combine recherche sémantique, recherche par mots-clés, citations cliquables, aperçu contextuel et assistant local pour aider à explorer des documents sans dépendre d'une API distante.
 
-Le projet est développé par Michael de LM-Code, sur [lm-code.be](https://lm-code.be).
+<img width="1169" height="779" alt="image" src="https://github.com/user-attachments/assets/af8c56d3-fd64-4aa4-9d29-01f266c1c3bb" />
+
+
+Le projet est développé par Michael de LM-Code, sur [lm-code.be](https://lm-code.be/pdf-semantic-search-application-recherche-pdf-locale/).
 
 ## Pourquoi cette application
 
