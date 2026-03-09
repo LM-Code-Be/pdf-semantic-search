@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-light-a: #f4fbff;
+  --bg-light-b: #ecf5ff;
+  --bg-dark-a: #08111f;
+  --bg-dark-b: #111f37;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 0% -10%, color-mix(in oklab, #38bdf8 18%, transparent), transparent 58%),
+    radial-gradient(1000px 700px at 100% 0%, color-mix(in oklab, #10b981 14%, transparent), transparent 62%),
+    linear-gradient(160deg, var(--bg-light-a), var(--bg-light-b));
+  @apply text-slate-900 dark:text-slate-100;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+}
+
+.dark body {
+  background:
+    radial-gradient(900px 620px at 0% -10%, color-mix(in oklab, #22d3ee 12%, transparent), transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, color-mix(in oklab, #34d399 10%, transparent), transparent 60%),
+    linear-gradient(160deg, var(--bg-dark-a), var(--bg-dark-b));
+}

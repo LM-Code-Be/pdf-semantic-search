@@ -1,0 +1,114 @@
+{
+  "name": "pdf-semantic-search",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local-first desktop application to index PDF libraries, run semantic search offline and answer questions with cited passages.",
+  "author": "Michael - LM-Code <contact@lm-code.be> (https://lm-code.be)",
+  "license": "MIT",
+  "homepage": "https://github.com/LM-Code-Be/pdf-semantic-search",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LM-Code-Be/pdf-semantic-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LM-Code-Be/pdf-semantic-search/issues"
+  },
+  "keywords": [
+    "pdf",
+    "semantic-search",
+    "electron",
+    "react",
+    "sqlite",
+    "ocr",
+    "local-first",
+    "ollama"
+  ],
+  "main": "out/main/index.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/rebuild-electron.mjs && node scripts/run-electron-vite.mjs dev",
+    "build": "node scripts/rebuild-electron.mjs && electron-vite build",
+    "preview": "node scripts/run-electron-vite.mjs preview",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier -w .",
+    "rebuild:electron": "node scripts/rebuild-electron.mjs",
+    "rebuild:node": "node scripts/rebuild-node.mjs",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.91",
+    "@tanstack/react-query": "^5.90.20",
+    "better-sqlite3": "^12.6.2",
+    "chokidar": "^4.0.3",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "electron-store": "^11.0.2",
+    "nanoid": "^5.1.6",
+    "pdfjs-dist": "^5.4.624",
+    "pino": "^10.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-pdf": "^10.3.0",
+    "tesseract.js": "^7.0.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.2",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.17.2",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.21",
+    "electron": "^40.3.0",
+    "electron-builder": "^26.6.0",
+    "electron-vite": "^5.0.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^3.2.0"
+  },
+  "build": {
+    "appId": "com.localfirst.pdfsemanticsearch",
+    "productName": "PDF Semantic Search",
+    "directories": {
+      "output": "release"
+    },
+    "files": ["out/**", "resources/**"],
+    "extraResources": [
+      {
+        "from": "python",
+        "to": "python",
+        "filter": ["**/*"]
+      }
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  }
+}
